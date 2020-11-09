@@ -1,0 +1,12 @@
+﻿@model FoldersManager.WebUI.Models.FolderViewModel
+
+@{
+    ViewBag.Title = Model.Name;
+}
+
+<h1>Folder: @Model.Name</h1>
+
+@foreach (var f in Model.Folders)
+{
+    <p>@Html.ActionLink(f.Name, null, new { id = f.Id, path = f.Path })</p>
+}
